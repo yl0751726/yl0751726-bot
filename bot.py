@@ -1,14 +1,11 @@
 import discord
 from discord.ext import commands
-import os
 
-TOKEN = os.environ['TOKEN']
-JOIN = os.environ['JOIN']
-LEAVE = os.environ['LEAVE']
+bot = commands.Bot(command_prefix='[')
 
-intents = discord.invite.all()
-
-bot = commands.bot(commands_prefix='//',intents = intents)
+TOKEN = 'OTQxNzIzMDI4NDAyODc2NTI2.YgaF6g.gB53404ay_jqKAJYVlm4XmwQBLQ'
+JOIN = '867789793440825346'
+LEAVE = '867789793440825346'
 
 @bot.event
 async def on_ready():
@@ -22,10 +19,10 @@ async def on_memer_join(member):
 @bot.event
 async def on_memer_join(member):
     channel = bot.get_channel(LEAVE)
-    await channel.send(f'阿呦~ {member} 離開了~真是太遜了~')
+    await channel.send(f'阿呦~ {member} 離開了~真是太遜了!')
 
 @bot.command()
 async def ping(ctx):
-    await ctx.send(f'這次不開玩笑了 目前延遲:{round(bot.latency*1000)}毫秒')
+    await ctx.send(f'真是太遜了!目前延遲:{round(bot.latency*1000)}毫秒')
 
 bot.run(TOKEN)
